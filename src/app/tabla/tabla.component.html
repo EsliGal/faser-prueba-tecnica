@@ -47,25 +47,45 @@
 <br>
 <!--Tabla-->
 <div>
-    <div style="float: left; width: 100%">
-      <ngx-datatable
-        style="width: 90%"
-        class="material"
-        [rows]="tareas"
-        [columnMode]="ColumnMode.force"
-        [headerHeight]="50"
-        [footerHeight]="50"
-        rowHeight="auto"
-        [limit]="10"
-      >
-        <ngx-datatable-column
-          name="Titulo"
-          [sortable]="false"
-        ></ngx-datatable-column>
-        <ngx-datatable-column
-          name="Minutos"
-          [sortable]="false"
-        ></ngx-datatable-column>
-      </ngx-datatable>
-    </div>
+  <div style="float: left; width: 75%">
+    <ngx-datatable
+      style="width: 90%"
+      class="material"
+      [rows]="tareas"
+      [columnMode]="ColumnMode.force"
+      [headerHeight]="50"
+      [footerHeight]="50"
+      rowHeight="auto"
+      [limit]="10"
+      [selected]="selected"
+      [selectionType]="SelectionType.multiClick"
+      (activate)="onActivate($event)"
+      (select)="onSelect($event)"
+    >
+      <ngx-datatable-column
+        name="Titulo"
+        [sortable]="false"
+      ></ngx-datatable-column>
+      <ngx-datatable-column
+        name="Minutos"
+        [sortable]="false"
+      ></ngx-datatable-column>
+    </ngx-datatable>
+
+  
+  </div>
+
+  <!-- Listado de seleccion -->
+<div class="selected-column">
+  <br>
+  <h4>
+    Tareas seleccionadas: <small>({{ selected?.length }})</small>
+  </h4>
+  <ul>
+    <li *ngFor="let sel of selected">
+      {{ sel.titulo }}
+    </li>
+    <li *ngIf="!selected?.length">No hay tareas seleccionadas</li>
+  </ul>
+</div>
 </div>

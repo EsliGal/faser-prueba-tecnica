@@ -7,3 +7,21 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.ngx-datatable.material.single-selection .datatable-body-row.active:hover, .ngx-datatable.material.single-selection 
+.datatable-body-row.active:hover .datatable-row-group, .ngx-datatable.material.multi-selection 
+.datatable-body-row.active:hover, .ngx-datatable.material.multi-selection .datatable-body-row.active:hover 
+.datatable-row-group, .ngx-datatable.material.multi-click-selection .datatable-body-row.active:hover, .ngx-datatable.material.multi-click-selection 
+.datatable-body-row.active:hover .datatable-row-group {
+    background-color: rgb(179, 179, 179);
+    color: #fff;
+}
+
+.ngx-datatable.material.single-selection .datatable-body-row.active, .ngx-datatable.material.single-selection 
+.datatable-body-row.active.datatable-body-row.active .datatable-row-group, .ngx-datatable.material.multi-selection 
+.datatable-body-row.active, .ngx-datatable.material.multi-selection .datatable-body-row.active .datatable-row-group, 
+.ngx-datatable.material.multi-click-selection .datatable-body-row.active, .ngx-datatable.material.multi-click-selection 
+.datatable-body-row.active .datatable-row-group {
+    background-color: rgb(100, 115, 253);
+    color: #fff;
+}
