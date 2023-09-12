@@ -46,4 +46,14 @@ export class TablaComponent implements OnInit {
     this.selected.push(...selected);
   }
 
+  //Eliminar
+  eliminar(){
+    this.service.eliminarTarea(this.selected);
+
+    this.tareas = [...this.tareas];
+    this.service.actualizar(this.tareas);
+
+    //Limpia la selección
+    this.selected = [];
+  }
 }

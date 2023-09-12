@@ -38,4 +38,18 @@ export class AppService {
     public actualizar(tareas: Tarea[]) {
         this.tareas = tareas;
     }
+
+    //Eliminar tarea
+    public async eliminarTarea(seleccionados: Tarea[]) {
+        try {
+          seleccionados.forEach((tarea) => {
+            let index = this.tareas.findIndex((obj) => obj.id === tarea.id)
+            if (index !== -1) {
+              this.tareas.splice(index, 1);
+            }
+          });
+        } catch (error) {
+          return null;
+        }
+    }
 }

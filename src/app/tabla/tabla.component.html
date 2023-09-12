@@ -74,18 +74,22 @@
 
   
   </div>
-
+  <!--Acciones-->
+  <h4>Acciones:</h4>
+  <div class="text-center ">
+      <button  type="button" class="btn btn-outline-danger" (click)="eliminar()">Eliminar</button>
+  </div>
   <!-- Listado de seleccion -->
-<div class="selected-column">
-  <br>
-  <h4>
-    Tareas seleccionadas: <small>({{ selected?.length }})</small>
-  </h4>
-  <ul>
-    <li *ngFor="let sel of selected">
-      {{ sel.titulo }}
-    </li>
-    <li *ngIf="!selected?.length">No hay tareas seleccionadas</li>
-  </ul>
-</div>
+  <div class="selected-column">
+    <br>
+    <h4>
+      Tareas seleccionadas: <small>({{ selected?.length }})</small>
+    </h4>
+    <ul>
+      <li *ngFor="let sel of selected">
+        {{ sel.titulo }}
+      </li>
+      <li *ngIf="!selected?.length">No hay tareas seleccionadas</li>
+    </ul>
+  </div>
 </div>
