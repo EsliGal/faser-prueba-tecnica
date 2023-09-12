@@ -66,4 +66,14 @@ export class TablaComponent implements OnInit {
     //Limpia la selección
     this.selected = [];
   }
+
+  aleatorio(){
+    this.service.aleatorio();
+
+    this.tareas = [...this.tareas];
+    this.service.actualizar(this.tareas);
+
+    //Limpia la selección
+    this.selected = [];
+  }
 }

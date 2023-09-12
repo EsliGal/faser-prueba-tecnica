@@ -73,4 +73,22 @@ export class AppService {
           return null;
         }
     }
+
+    //Aleatorio
+    public async aleatorio() {
+        try {
+            // funcion anonima que me devulve un numero aleatorio entre -0.5 y 0.5 y resto el 0.5 para que la funcion devuelva un numero + o - de manera aleatorio.
+            this.tareas.sort(() => Math.random() - 0.5);
+            } catch (error) {
+            return null;
+        }
+    }
+
+    public async imprimir() {
+        try {
+            console.log("En el service", this.tareas);
+        } catch (error) {
+            return null;
+        }
+    }
 }
