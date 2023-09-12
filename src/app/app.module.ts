@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 
 //Libreria agregadas
 import {NgxDatatableModule} from '@swimlane/ngx-datatable';
+import { FormsModule } from '@angular/forms';
 
 //Componentes agregados
 import { TablaComponent } from './tabla/tabla.component';
@@ -18,7 +19,8 @@ import { TablaComponent } from './tabla/tabla.component';
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
-		NgxDatatableModule
+		NgxDatatableModule,
+		FormsModule
 	],
 	providers: [ AppService ],
 	bootstrap: [ AppComponent ]

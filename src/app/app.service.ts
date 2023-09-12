@@ -7,6 +7,9 @@ export class AppService {
         
     ) { }
 
+    public tareas: Tarea[]=[];
+    private total:number;
+
     public async obtenerTareas() {
         try {
             var tareas: Tarea[] = [];
@@ -19,5 +22,20 @@ export class AppService {
         } catch (error) {
             return null;
         }
+    }
+
+    //Agregar tareas
+    public async agregarTarea(titulo: string, minutos: number) {
+        try {
+          // agrego la tarea al arreglo y aumento el indice
+          this.tareas.push(new Tarea(this.total, titulo, minutos));
+          this.total++;
+        } catch (error) {
+          return null;
+        }
+    }
+
+    public actualizar(tareas: Tarea[]) {
+        this.tareas = tareas;
     }
 }

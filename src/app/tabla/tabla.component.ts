@@ -10,6 +10,9 @@ import { Tarea } from '../tarea';
 })
 export class TablaComponent implements OnInit {
 
+  titulo:string;
+  minutos:number;
+
   @Input() tareas: Tarea[];
   selected : Tarea[] = [];
 
@@ -18,6 +21,22 @@ export class TablaComponent implements OnInit {
   constructor(public service: AppService) { }
 
   ngOnInit() {
+  }
+
+  //Agregar tarea
+  async onSubmit() {
+    if (this.titulo != null && this.minutos != null) {
+      this.service.agregarTarea(this.titulo, this.minutos);
+
+      this.tareas = [...this.tareas];
+      this.service.actualizar(this.tareas);
+
+      // limpio los campos
+      this.titulo = null;
+      this.minutos = null;
+    }else{
+      alert("Complete los campos de la tarea");
+    }
   }
 
 }
