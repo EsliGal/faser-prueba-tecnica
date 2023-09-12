@@ -52,4 +52,25 @@ export class AppService {
           return null;
         }
     }
+
+     //Destacados
+     public async destacar(seleccionados: Tarea[]) {
+        try {
+          seleccionados.forEach((tarea) => {
+            let index = this.tareas.findIndex((obj) => obj.id === tarea.id);
+    
+            //Ingresa el destacado si existe y no posee uno
+            if (index !== -1) {
+              if (!this.tareas[index].titulo.endsWith("⭐")) {
+                this.tareas[index].titulo = this.tareas[index].titulo.concat('  ⭐');
+              } else {
+                let c = this.tareas[index].titulo.length-1
+                this.tareas[index].titulo = this.tareas[index].titulo.substring(0, c);
+              }
+            }
+          });
+        } catch (error) {
+          return null;
+        }
+    }
 }

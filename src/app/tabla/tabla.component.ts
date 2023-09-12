@@ -56,4 +56,14 @@ export class TablaComponent implements OnInit {
     //Limpia la selección
     this.selected = [];
   }
+
+  destacar(){
+    this.service.destacar(this.selected);
+
+    this.tareas = [...this.tareas];
+    this.service.actualizar(this.tareas);
+
+    //Limpia la selección
+    this.selected = [];
+  }
 }
